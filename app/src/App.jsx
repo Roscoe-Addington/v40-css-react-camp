@@ -38,8 +38,14 @@ function App() {
       </form>
       <ul className="todo-list">
         {todos.map((t) => (
-          <li key={t.id} className="todo">
-            …
+          <li key={t.id} className={t.done ? "todo completed" : "todo"}>
+            <button type="button" onClick={() => toggleDone(t.id)}>
+              {t.done ? "Avmarkera" : "Klar"}
+            </button>{" "}
+            {t.text}{" "}
+            <button type="button" onClick={() => removeTodo(t.id)}>
+              Ta bort
+            </button>
           </li>
         ))}
       </ul>

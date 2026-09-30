@@ -1,16 +1,13 @@
-# React + Vite
+Felsökning
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Import
+Är CSS-filen importerad?
+Titta i App.jsx-filen högst upp, försäkra dig att det har gjorts en import av CSS-filen (import"./App.css";). Är det inget som fungarar kan felet bero på det.
 
-Currently, two official plugins are available:
+className
+Stämmer className?
+Det Jämnför klassnamnet i JSX med selektorn i CSS-filen, bokstav för bookstav. Det måste matcha exakt. Datorn gissar inte vad man menar. Om klassen sätts med en ternary: bör man kontrollera att både grenerna ger rätt klasser.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Inspect
+Inspektera elemenrtet
+Genom att högerklicka och skråla vidare till Inspect. Kan man se om regeln används eller om den är överstruken.
