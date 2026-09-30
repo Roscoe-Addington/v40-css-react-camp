@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -12,17 +13,12 @@ function App() {
     e.preventDefault();
     const trimmed = text.trim();
     if (!trimmed) return;
-    setTodos([
-      ...todos,
-      { id: Date.now(), text: trimmed, done: false },
-    ]);
+    setTodos([...todos, { id: Date.now(), text: trimmed, done: false }]);
     setText("");
   }
 
   function toggleDone(id) {
-    setTodos(
-      todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
-    );
+    setTodos(todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
   }
 
   function removeTodo(id) {
@@ -31,24 +27,23 @@ function App() {
 
   return (
     <main className="app">
-  <h1>Min ToDo</h1>
-  <form className="input-row" onSubmit={addTodo}>
-    <input
-      value={text}
-      onChange={(e) => setText(e.target.value)}
-      placeholder="Ny uppgift"
-    />
-    <button type="submit">Lägg till</button>
-  </form>
-  <ul className="todo-list">
-    {todos.map((t) => (
-      <li key={t.id} className="todo">
-        …
-      </li>
-    ))}
-  </ul>
-</main>
-
+      <h1>Min ToDo</h1>
+      <form className="input-row" onSubmit={addTodo}>
+        <input
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          placeholder="Ny uppgift"
+        />
+        <button type="submit">Lägg till</button>
+      </form>
+      <ul className="todo-list">
+        {todos.map((t) => (
+          <li key={t.id} className="todo">
+            …
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
